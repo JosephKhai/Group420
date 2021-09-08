@@ -1,3 +1,5 @@
+create schema group420;
+
 create table CustomerOrder (
 	Transaction_number int (10),
     Item_name varchar(50),
@@ -8,8 +10,6 @@ create table CustomerOrder (
     Time_Of_Sale Time
 );
 
-
-drop table Warehouse;
 
 create table Warehouse (
 	Item_ID int,
