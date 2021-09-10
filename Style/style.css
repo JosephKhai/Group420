@@ -69,6 +69,16 @@ ul.topnav {
     width: 50%;
 }
 
+  /*signup form */
+  .signup-form {
+    clear: both;
+    width: 62%;
+    padding: 0.625em;
+    background-color: #8bcdf3;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
 /* add sale */
 
 .AddSales{
