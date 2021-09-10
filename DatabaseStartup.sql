@@ -23,4 +23,10 @@ insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
 ) values (1, "Four Twenty", 1, "slight yeeeting", 420);
 
+
+insert into Warehouse (
+	Item_ID, Item_Name, Quantity, Item_Description, Price
+) values (2, "", 1, "slight yeeeting", 420);
+
+
 select * from Warehouse;
