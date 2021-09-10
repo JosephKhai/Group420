@@ -17,7 +17,35 @@
 
     <div><h1>Add Sales</h1></div>
 
+    <div><h2>Customer Order</h2></div>
+    <div class="AddSales">
+        <label for="ItemName"><b>Item Name</b></label>
+        <input type="text" placeholder="Enter Item" name="ItemName" required>
+
+        <label for="Quantity"><b>Quanitity</b></label>
+        <input type="text" placeholder="Enter Quantity" name="Quantity" required>
+
+        <button type="submit">Add</button>
+    </div>
+    
+    <!--When an item is added (above) display in table bellow-->
+    <div><h1>Current Order</h1></div>
+    <div>
+        <table class="CurrentCustomerOrder">
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>This is an item</td>
+            <td>4</td>
+            <td>420</td>
+        </tr>
+        </table>
+    </div>
+
+
+    <button type="submit">Process</button>
     </body>
 </html>
-
-
