@@ -20,6 +20,8 @@ if ($result = $mysqli->query("SELECT * FROM Item_Warehouse")) {
     $result->close();
 }
 
+echo "<p>Connection successful</p>";
+
 $mysqli->close();
 
 ?>
