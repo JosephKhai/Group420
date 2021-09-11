@@ -6,6 +6,7 @@
     <meta name="description" content="AddSales">
     <meta name="keywords" content="AddSales">
     <link rel="stylesheet" href="Style/style.css">
+	<script src="scripts/AddSales.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                 <input type="text" placeholder="Enter Quantity" name="Quantity" required>
             </p>
             <p>
-                <button type="submit">Add</button>
+                <button id="addBtn" type="submit">Add</button>
             </p>
 
         </fieldset>
@@ -47,7 +48,7 @@
         <h1>Current Order</h1>
     </div>
     <div>
-        <table class="CurrentCustomerOrder">
+        <table class="CurrentCustomerOrder" id="OrderTable">
             <tr>
                 <th>Item</th>
                 <th>Quantity</th>
