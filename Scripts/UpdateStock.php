@@ -20,6 +20,12 @@ if ($result = $mysqli->query("SELECT * FROM Item_Warehouse")) {
     $result->close();
 }
 
+if(isset($_POST['test'])) {
+    echo "This is Button1 that is selected";
+}
+if(isset($_POST['button2'])) {
+    echo "This is Button2 that is selected";
+}
 echo "<p>Connection successful</p>";
 
 $mysqli->close();
