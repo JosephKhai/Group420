@@ -1,0 +1,134 @@
+/*Menu System */
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-family: arial;
+    text-align: left;
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
+  ul.topnav li {float: left;}
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+    font-size: 17px;
+    border-right: 1px solid #bbb;
+  }
+  ul.topnav li a:hover:not(.active) {
+      background-color: #ddd;
+      color: black;
+  }
+  ul.topnav li a.active {
+      background-color: #69c2c2;
+  }
+  ul.topnav li.right {
+      float: right;
+  }
+  @media screen and (max-width: 720px) {
+    ul.topnav li{
+        width: 100%;
+    }
+    ul.topnav a{
+        width: 100%;
+    }
+  }
+
+  /* heading 1 */
+
+  h1 {
+    font-size:2em;
+    font-weight:bold;
+    text-align: center;
+}
+
+/*body*/
+body {
+    margin: 0;
+    text-align: center;
+    background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
+  }
+
+  /* button */
+
+  button {
+    background-color: #51b3da;
+    color: rgb(0, 0, 0);
+    padding: 8px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    clear: both;
+}
+
+
+  /*login form */
+.login-form {
+    clear: both;
+    width: 62%;
+    padding: 0.625em;
+    background-color: #8bcdf3;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+/* add sale */
+
+.AddSales{
+    clear: both;
+    width: 62%;
+    padding: 0.625em;
+    background-color: #8bcdf3;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+/*table style properties */
+table {
+    padding: 10%;
+    margin: 10%;
+    width: 62%;
+    margin: 10px auto;
+    clear: left;
+}
+
+th, td {
+    padding: 5px;
+    border: solid 1px;
+    text-align: center;
+}
+
+table, td, th {
+    border-collapse: collapse;
+}
+
+/*table hover background-color and hover border properties */
+
+table, td :hover {
+    background-color: #4b86b4;
+}
+
+/*if the mouse is over the table, table cell background color will change */
+
+table {
+    background-color: #afeeee;
+}
+
+/*table head content properties and value */
+
+table th {
+    background-color: green;
+    font-weight: bold;
+    font-size: 1.2em;
+}
