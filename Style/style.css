@@ -81,6 +81,21 @@ ul.topnav {
     width: 50%;
 }
 
+/* heading 1 /
+
+  h1 {
+    font-size:2em;
+    font-weight:bold;
+    text-align: center;
+}
+
+/body*/
+body {
+    margin: 0;
+    text-align: center;
+    background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
+  }
+
 /*table style properties */
 table {
     padding: 10%;
