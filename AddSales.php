@@ -11,10 +11,10 @@
 
 <body>
     <ul class="topnav">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a class="active" href="AddSales.html">Add Sales</a></li>
         <li><a href="UpdateStock.html">Update Stock</a></li>
-        <li><a href="SalesReport.php">Sales Report</a></li>
+        <li><a href="SalesReport.html">Sales Report</a></li>
         <li class="right"><a href="About.html">About</a></li>
     </ul>
 
@@ -23,10 +23,9 @@
     </div>
 
     <div>
-
+        <h2>Customer Order</h2>
     </div>
     <div class="AddSales">
-        <h2>Customer Order</h2>
         <fieldset>
             <p>
                 <label for="ItemName"><b>Item Name</b></label>
