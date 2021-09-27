@@ -1,5 +1,7 @@
 create schema group420;
 
+use group420;
+
 create table CustomerOrder (
 	Transaction_number int (10),
     Item_name varchar(50),
@@ -26,7 +28,19 @@ insert into Warehouse (
 
 insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
-) values (2, "", 1, "slight yeeeting", 420);
+) values (2, "Fire Crackers", 1, "Highly Flamable", 35);
+
+insert into Warehouse (
+	Item_ID, Item_Name, Quantity, Item_Description, Price
+) values (3, "water", 1, "H2O", 10);
 
 
-select * from Warehouse;
+insert into Warehouse (
+	Item_ID, Item_Name, Quantity, Item_Description, Price
+) values (4, "Ear Muffs", 1, "Fluffy", 45);
+
+insert into Warehouse (
+	Item_ID, Item_Name, Quantity, Item_Description, Price
+) values (5, "bandaids", 1, "Thick", 69);
+
+
