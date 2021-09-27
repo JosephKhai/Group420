@@ -1,5 +1,7 @@
 create schema group420;
 
+use group420;
+
 create table CustomerOrder (
 	Transaction_number int (10),
     Item_name varchar(50),
@@ -41,13 +43,4 @@ insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
 ) values (5, "bandaids", 1, "Thick", 69);
 
-
-use group420;
-
-select * from Warehouse;
-
-select * from Login_;
-
-update Warehouse
-SET Item_Description = "Thick and lubricated" Where Item_id = 3;
 
