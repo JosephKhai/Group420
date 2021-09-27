@@ -83,16 +83,6 @@ body {
     width: 50%;
 }
 
-  /*signup form */
-  .signup-form {
-    clear: both;
-    width: 62%;
-    padding: 0.625em;
-    background-color: #8bcdf3;
-    text-align: center;
-    margin: auto;
-    width: 50%;
-}
 /* add sale */
 
 .AddSales{
@@ -104,6 +94,21 @@ body {
     margin: auto;
     width: 50%;
 }
+
+/* heading 1 */
+
+  h1 {
+    font-size:2em;
+    font-weight:bold;
+    text-align: center;
+}
+
+/*body*/
+body {
+    margin: 0;
+    text-align: center;
+    background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
+  }
 
 /*table style properties */
 table {
