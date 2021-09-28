@@ -21,7 +21,7 @@
         <input name="test" type="submit" value="test" /> 
     </form>
 
-    <?php
+    <?php 
 
 	$query = "";
 	require_once "settings.php";	// Load MySQL log in credentials

@@ -9,7 +9,7 @@ ul.topnav {
     font-family: arial;
     text-align: left;
     width: 100%;
-    position: sticky;
+    position: sticky; 
     top: 0;
   }
   ul.topnav li {float: left;}

@@ -19,7 +19,7 @@ $id = "";
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
    
-}
+} 
 
 if(empty($id)){
     echo "ID is blank!";

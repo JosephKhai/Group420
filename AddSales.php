@@ -17,7 +17,7 @@
         <li><a href="SalesReport.html">Sales Report</a></li>
         <li class="right"><a href="About.html">About</a></li>
     </ul>
-
+ 
     <div>
         <h1>Add Sales</h1>
     </div>

@@ -4,7 +4,7 @@ $mysqli = new mysqli("group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com", "
 /* check connection */
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
+    exit(); 
 }
 
 /* Create table doesn't return a resultset */

@@ -1,8 +1,8 @@
 function CheckforInt(var s) {
 		return Number.isInteger(s);
-}
+} 
 
-function Add() {
+function Add() { 
 	// Find a <table> element with id="OrderTable"
 	var table = document.getElementById("OrderTable");
 	var itemname = document.getElementsByName("ItemName")[0].value; 

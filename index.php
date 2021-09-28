@@ -20,7 +20,7 @@
         <h1>Home</h1>
     </div>
 
-    <?php
+    <?php 
 
    
     //if session is login_user
