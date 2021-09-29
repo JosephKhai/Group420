@@ -10,7 +10,7 @@
 
 <body>
     <ul class="topnav">
-        <li><a class="active" href="index.php">Home</a></li>
+        <li><a class="active" href="index.php ">Home</a></li>
         <li><a href="AddSales.html">Add Sales</a></li>
         <li><a href="UpdateStock.html">Update Stock</a></li>
         <li><a href="SalesReport.php">Sales Report</a></li>

@@ -17,7 +17,7 @@
     </ul>
 
     <div>
-        <h1>Home</h1>
+        <h1>Home </h1>
     </div>
 
     <?php 
@@ -25,7 +25,7 @@
    
     //if session is login_user
     if (isset($_SESSION['login_user'])) {
-        header("location: index.php");
+        header("location: index.php"); 
     }
 
     $error = "";
