@@ -25,7 +25,7 @@
     <div>
         <h2>Customer Order</h2>
     </div>
-    <div class="AddSales">
+    <div class="AddSales"> 
         <fieldset>
             <p>
                 <label for="ItemName"><b>Item Name</b></label>

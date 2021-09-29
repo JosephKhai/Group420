@@ -26,7 +26,7 @@ if(isset($_POST['test'])) {
 if(isset($_POST['button2'])) {
     echo "This is Button2 that is selected";
 }
-echo "<p>Connection successful</p>";
+echo "<p>Connection successful</p>"; 
 
 $mysqli->close();
 

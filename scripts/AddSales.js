@@ -13,7 +13,7 @@ function Add() {
 	//ResultSet rs;
 	
 	
-	var user = "vapenation4lyf";
+	var user = "vapenation4lyf"; 
 	var pass = "LLKjMwLSYFW44dbF";
 	var serverDetails = "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com";
 	var portNum = "3306";
