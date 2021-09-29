@@ -3,7 +3,7 @@
 
 <head>
     <title>Home</title>
-    <meta name="description" content="index">
+    <meta name="description" content="index"> 
     <meta name="keywords" content="index">
     <link rel="stylesheet" href="Style/style.css">
 </head>
