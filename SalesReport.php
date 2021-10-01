@@ -24,7 +24,7 @@
 	<div class="stockReport">
 
 		<!--for Stock report-->
-		<h3>Stock Report will display available stock</h3>
+		<h3>Stock Report Display available item</h3>
 
 		<?php
 
@@ -95,7 +95,7 @@
 	<div class="saleReport">
 
 		<!--for Stock report-->
-		<h3>Sales Report will display sold item</h3>
+		<h3>Stock Report Display sold item</h3>
 
 		<?php
 
@@ -167,7 +167,7 @@
 	<div class="outofStockReport">
 
 		<!--for Stock report-->
-		<h3>Sales Report will display out of stock item</h3>
+		<h3>Stock Report Display out of stock item</h3>
 
 		<?php
 

@@ -45,7 +45,8 @@
             <p>
                 <label>Item ID: <input type="text" name="item_id" id="item_id"></label>
                 <select name="update_Opt">
-                    <option value="IN_STOCK">IN STOCK</option>
+                    <option></option>
+                    <option value="INSTOCK">IN STOCK</option>
                     <option value="OUT_OF_STOCK">OUT OF STOCK</option>
                     <option value="SOLD">SOLD</option>
                 </select>
@@ -95,13 +96,13 @@
 
             $opt = trim($_POST["update_Opt"]);
             switch ($opt) {
-                case "Pending":
+                case "INSTOCK":
                     $query = "UPDATE PHPWarehouse SET ItemStatus ='INSTOCK' WHERE Item_ID= $item_id_val;";
                     break;
-                case "Fullfilled":
+                case "OUT_OF_STOCK":
                     $query = "UPDATE PHPWarehouse SET ItemStatus ='OUT_OF_STOCK' WHERE Item_ID= $item_id_val;";
                     break;
-                case "Paid":
+                case "SOLD":
                     $query = "UPDATE PHPWarehouse SET ItemStatus ='SOLD' WHERE Item_ID= $item_id_val;";
                     break;
             }
@@ -146,7 +147,7 @@
                     echo "<td>{$record['Ordertime']}</td>";
                     echo "<td>{$record['ItemStatus']}</td>";
                     echo "<td>{$record['Price']}</td>";
-                    echo "<td><a href='delete.php?id=" . $record['Item_ID'] . "'>Delete</a></td>;
+                    echo "<td><a href='delete.php?id=" . $record['Item_ID'] . "'>Delete</a></td>
                     		
 					</tr>";
 
@@ -166,11 +167,6 @@
     }
 
     ?>
-
-
-
-
-
 
 </body>
 
