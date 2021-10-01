@@ -2,7 +2,7 @@
 	session_start(); // start the session
 	
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-		header("location: AddSales.php");
+		header("location: AddSales.php"); 
 		exit;
 	}
 ?>
