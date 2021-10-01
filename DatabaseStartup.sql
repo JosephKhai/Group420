@@ -21,6 +21,19 @@ create table Warehouse (
     Price int(4)
 );
 
+<!--update warehouse table-->
+CREATE TABLE IF NOT EXISTS PHPWarehouse  (
+            Item_ID INT AUTO_INCREMENT PRIMARY KEY, 
+            Item_Name VARCHAR(50), 
+            Quantity  INT(50),
+            Item_Description  VARCHAR(50),
+            Ordertime DATETIME, 
+            ItemStatus VARCHAR(50),
+            Price  DECIMAL (5,2)
+            );";
+
+
+
 insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
 ) values (1, "Four Twenty", 1, "slight yeeeting", 420);

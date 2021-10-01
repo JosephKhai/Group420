@@ -8,7 +8,7 @@ $conn = mysqli_connect($host, $user, $pwd, $sql_db);    // Log in and use databa
 //delete record
 function deleteRecord(mysqli $conn, $id)
 {
-    $query = "DELETE FROM Warehouse Where Item_ID = $id;";
+    $query = "DELETE FROM PHPWarehouse Where Item_ID = $id;";
     $result = mysqli_query($conn, $query);
     if (!$result) {
         echo "Error Deleting record!";
@@ -18,16 +18,12 @@ function deleteRecord(mysqli $conn, $id)
 $id = "";
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
-   
 }
 
-if(empty($id)){
+if (empty($id)) {
     echo "ID is blank!";
 }
 
 deleteRecord($conn, $id);
 header('location: SalesReport.php');
 die;
-
-
-
