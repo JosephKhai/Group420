@@ -132,7 +132,7 @@
                     echo "<td>{$record['Ordertime']}</td>";
                     echo "<td>{$record['ItemStatus']}</td>";
                     echo "<td>{$record['Price']}</td>";
-                    echo "				
+                    echo "<td><a href='edit.php?id=" . $record['Item_ID'] . "'>Edit</a></td>		
 					</tr>";
 
                     $record = mysqli_fetch_assoc($result);
@@ -151,28 +151,6 @@
     }
 
     ?>
-
-
-    <!--When an item is added (above) display in table bellow
-
-    <div>
-        <h1>Current Order</h1>
-    </div>
-    <div>
-        <table class="CurrentCustomerOrder" id="OrderTable">
-            <tr>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td>This is an item</td>
-                <td>4</td>
-                <td>420</td>
-            </tr>
-        </table>
-    </div>
-       -->
 
 
 </body>
