@@ -16,6 +16,10 @@
 		<li><a href="SalesReport.php">Sales Report</a></li>
 		<li class="right"><a href="About.php">About</a></li>
 	</ul>
+	<h1>Report Page</h1>
+
+	<br />
+	<br />
 
 	<div class="stockReport">
 
@@ -83,6 +87,11 @@
 
 	</div>
 
+	<hr />
+	<br />
+	<br />
+	<br />
+	<br />
 
 	<div class="saleReport">
 
@@ -149,12 +158,6 @@
 		<input type="button" name="generateSalesCSV" value="Generate CSV" />
 
 	</div>
-
-
-
-
-
-
 
 
 </body>
