@@ -19,35 +19,20 @@
     <!--Home Page-->
 
     <div class="dashboard">
-        <h3>Pharmacy System Admin page</h3>
+        <h3>Welcom to PHP-SRePS System</h3>
 
-
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <h3>Card 1</h3>
-
-                </div>
+        <div class="wrapper">
+            <div class="box a">
+                <p> <a href="AddSales.php">Add Medicine</a></p>
             </div>
-
-            <div class="column">
-                <div class="card">
-                    <h3>Card 2</h3>
-
-                </div>
+            <div class="box b">
+                <p> <a href="SalesReport.php">Stock Report</a></p>
             </div>
-
-            <div class="column">
-                <div class="card">
-                    <h3>Card 3</h3>
-
-                </div>
+            <div class="box c">
+                <p> <a href="admin.php">Admin Page</a></p>
             </div>
-
-            <div class="column">
-                <div class="card">
-                    <h3>Card 4</h3>
-                </div>
+            <div class="box d">
+                <p> <a href="index.php">Logout</a></p>
             </div>
         </div>
 
