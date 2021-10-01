@@ -29,23 +29,25 @@ function Add() {
 	var priceCell = row.insertCell(2);
 	var totalCell = row.insertCell(3);
 	
-	//var mysql = require('mysql');
-	
-	//var con = mysql.createConnction({
-	//	host: serverDetails
-	//	user: user
-	//	password: pass
-	//})
-	//
-	//con.connect(function(err) {
-	//	if (err) throw err;
-	//	console.log("Connected!");
-	//});
-	//
-	//con.query("SELECT Price FROM Warehouse WHERE UPPER(Item_Name) = ?", toUpperCase(itemname), function (err, result) {
-	//	if (err) throw err;
-	//	console.log(result);
-	//});
+	var mysql = require('mysql');
+
+	var con = mysql.createConnection({
+		host: "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com",
+		user: "vapenation4lyf",
+		password: "LLKjMwLSYFW44dbF",
+		database: "group420"
+	});
+
+	con.connect(function(err) {
+	if (err) throw err;
+		con.query("SELECT Price FROM Warehouse WHERE UPPER(Item_Name) = ?",[itemname], function (err, result, fields) {
+			if (err) throw err;
+			console.log(result);
+			var row = result[key];
+			console.log(row.name);
+			console.log(row.value);
+			});
+	});
 	
 	// Add some text to the new cells:
 	itemCell.innerHTML = itemname;
@@ -56,9 +58,9 @@ function Add() {
 	//	// the mysql insert statement
 	//	query = "SELECT Price FROM Warehouse WHERE UPPER(Item_Name) = ?";
 	//	
-	//	// create the mysql insert preparedstatement
-	//	preparedStmt = conn.prepareStatement(query);
-	//	preparedStmt.setString (1, itemname);
+	//	Object.keys(result).forEach(function(key) {
+	//	var row = result[key];
+	//	console.log(row.name)
 	//	rs = preparedStmt.executeQuery();        // Get the result table from the query 
 	//	itemPrice = rs.getString(1);        // Retrieve the first column value
 	//}
