@@ -42,7 +42,6 @@ ul.topnav {
     }
   }
 
-  /*  */
 
   /* button */
 
@@ -63,11 +62,14 @@ h1 {
     font-size:2em;
     font-weight:bold;
     text-align: center;
+    
 }
 
 /*body*/
 body {
-    margin: 0;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
   }
@@ -83,6 +85,26 @@ body {
     width: 50%;
 }
 
+/*
+input[type=text] {
+    width: 30%;
+    padding: 5px 5px;
+    margin: 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 5px 5px;
+    margin: 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+*/
+
+
+
 /* add sale */
 
 .AddSales{
@@ -97,15 +119,11 @@ body {
 
 /* heading 1 */
 
-  h1 {
-    font-size:2em;
-    font-weight:bold;
-    text-align: center;
-}
+
 
 /*body*/
 body {
-    margin: 0;
+    margin: auto;
     text-align: center;
     background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
   }
@@ -148,4 +166,68 @@ table th {
     font-weight: bold;
     font-size: 1.2em;
 }
+
+
+/*when user click in inside text input background color will change */
+input[type=text]:focus {
+    border: 2px solid #4b86b4;
+    background-color: white;
+}
+
+
+
+input[type=submit] {
+    background-color: #014a66;
+    color: antiquewhite;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+/*Home page */
+.wrapper {
+    display: inline-grid;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    grid-gap: 50px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .box {
+    background-color: rgb(4, 46, 73);
+    border-radius: 5px;
+    font-size: 100%;
+    padding: 50px;
+  }
+
+
+  .dashboard{
+      background-color: #69c2c2;
+  }
+
+
+  a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a:hover, a:active {
+    background-color: green;
+  }
+
+  .error{
+      color: red;
+      font-size: 12px;
+      font-style: italic;
+  }
+
+
+
 
