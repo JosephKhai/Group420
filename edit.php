@@ -38,7 +38,7 @@
         echo "ID is blank!";
     }
 
-    $qry = mysqli_query($conn, "SELECT * FROM PHPWarehouse WHERE Item_ID='$id'"); // select query
+    $qry = mysqli_query($conn, "SELECT * FROM Warehouse WHERE Item_ID='$id'"); // select query
 
     $data = mysqli_fetch_array($qry); // fetch data
 
@@ -56,11 +56,11 @@
         $price = $_POST['price'];
         $price = sanitise_input($price);
 
-        $query = "UPDATE PHPWarehouse SET Item_Name ='$itemname', Quantity ='$quantity', Item_Description ='$description', Price ='$price'  WHERE Item_ID= $id;";
+        $query = "UPDATE Warehouse SET Item_Name ='$itemname', Quantity ='$quantity', Item_Description ='$description', Price ='$price'  WHERE Item_ID= $id;";
         $result = mysqli_query($conn, $query);
         if ($result) {
             mysqli_close($conn); // Close connection
-            header("location: AddSales.php"); // redirects to all addsales page
+            header("location: addItems.php"); // redirects to all addsales page
             exit;
         } else {
             echo "Error Updating record!";

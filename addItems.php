@@ -12,8 +12,8 @@
 <body>
     <ul class="topnav">
         <li><a href="homepage.php">Home</a></li>
-        <li><a href="AddSales.php">Add Sales</a></li>
-        <li><a href="SalesReport.php">Sales Report</a></li>
+        <li><a href="addItems.php">Add Item</a></li>
+        <li><a href="warehouse.php">Warehouse Report</a></li>
         <li class="right"><a href="About.php">About</a></li>
     </ul>
 
@@ -104,7 +104,7 @@
 
         echo "database connected!<br>";
 
-        $query = "SELECT * FROM PHPWarehouse;";
+        $query = "SELECT * FROM Warehouse;";
 
         $result = mysqli_query($conn, $query);
         if ($result) {    //   query was successfully executed
@@ -118,7 +118,6 @@
                     <th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
                     <th><a class="colum_sort" id="quantity" data-order="'.$order.'">Quantity</a></th>
                     <th><a class="colum_sort" id="description" data-order="'.$order.'">Item_Description</a></th>
-                    <th><a class="colum_sort" id="description" data-order="'.$order.'">Ordertime</a></th>
                     <th><a class="colum_sort" id="description" data-order="'.$order.'">ItemStatus</a></th>
                     <th><a class="colum_sort" id="price" data-order="'.$order.'">Price</a></th>
 
@@ -129,7 +128,6 @@
                     echo "<td>{$record['Item_Name']}</td>";
                     echo "<td>{$record['Quantity']}</td>";
                     echo "<td>{$record['Item_Description']}</td>";
-                    echo "<td>{$record['Ordertime']}</td>";
                     echo "<td>{$record['ItemStatus']}</td>";
                     echo "<td>{$record['Price']}</td>";
                     echo "<td><a href='edit.php?id=" . $record['Item_ID'] . "'>Edit</a></td>		

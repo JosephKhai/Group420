@@ -12,8 +12,8 @@
 <body>
     <ul class="topnav">
         <li><a href="homepage.php">Home</a></li>
-        <li><a href="AddSales.php">Add Sales</a></li>
-        <li><a href="SalesReport.php">Sales Report</a></li>
+        <li><a href="addItems.php">Add Item</a></li>
+        <li><a href="warehouse.php">Warehouse Report</a></li>
         <li class="right"><a href="About.php">About</a></li>
     </ul>
 
@@ -74,17 +74,17 @@
             switch ($opt) {
 
                 case "item_name":
-                    $query = "SELECT * FROM PHPWarehouse WHERE Item_Name LIKE '%$searchval%' ";
+                    $query = "SELECT * FROM Warehouse WHERE Item_Name LIKE '%$searchval%' ";
 
                     break;
                 case "item_status":
-                    $query = "SELECT * FROM PHPWarehouse WHERE ItemStatus LIKE '%$searchval%' ";
+                    $query = "SELECT * FROM Warehouse WHERE ItemStatus LIKE '%$searchval%' ";
 
                     break;
             }
         }
     } else {
-        $query = "SELECT * FROM PHPWarehouse;";
+        $query = "SELECT * FROM Warehouse;";
     }
 
 
@@ -97,20 +97,20 @@
             $opt = trim($_POST["update_Opt"]);
             switch ($opt) {
                 case "INSTOCK":
-                    $query = "UPDATE PHPWarehouse SET ItemStatus ='INSTOCK' WHERE Item_ID= $item_id_val;";
+                    $query = "UPDATE Warehouse SET ItemStatus ='INSTOCK' WHERE Item_ID= $item_id_val;";
                     break;
                 case "OUT_OF_STOCK":
-                    $query = "UPDATE PHPWarehouse SET ItemStatus ='OUT_OF_STOCK' WHERE Item_ID= $item_id_val;";
+                    $query = "UPDATE Warehouse SET ItemStatus ='OUT_OF_STOCK' WHERE Item_ID= $item_id_val;";
                     break;
                 case "SOLD":
-                    $query = "UPDATE PHPWarehouse SET ItemStatus ='SOLD' WHERE Item_ID= $item_id_val;";
+                    $query = "UPDATE Warehouse SET ItemStatus ='SOLD' WHERE Item_ID= $item_id_val;";
                     break;
             }
 
             $result = mysqli_query($conn, $query);
             if ($result) {
                 echo "<p>Update successful!</p>";
-                $query = "SELECT * FROM PHPWarehouse;";
+                $query = "SELECT * FROM Warehouse;";
             } else {
                 echo "<p>Update not successful!</p>";
             }
@@ -132,7 +132,6 @@
                     <th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
                     <th><a class="colum_sort" id="quantity" data-order="'.$order.'">Quantity</a></th>
                     <th><a class="colum_sort" id="description" data-order="'.$order.'">Item_Description</a></th>
-                    <th><a class="colum_sort" id="description" data-order="'.$order.'">Ordertime</a></th>
                     <th><a class="colum_sort" id="description" data-order="'.$order.'">ItemStatus</a></th>
                     <th><a class="colum_sort" id="price" data-order="'.$order.'">Price</a></th>
                     <th>Action</th>
@@ -144,7 +143,6 @@
                     echo "<td>{$record['Item_Name']}</td>";
                     echo "<td>{$record['Quantity']}</td>";
                     echo "<td>{$record['Item_Description']}</td>";
-                    echo "<td>{$record['Ordertime']}</td>";
                     echo "<td>{$record['ItemStatus']}</td>";
                     echo "<td>{$record['Price']}</td>";
                     echo "<td><a href='delete.php?id=" . $record['Item_ID'] . "'>Delete</a></td>

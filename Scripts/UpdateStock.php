@@ -29,5 +29,3 @@ if(isset($_POST['button2'])) {
 echo "<p>Connection successful</p>";
 
 $mysqli->close();
-
-?>

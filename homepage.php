@@ -23,10 +23,12 @@
 
         <div class="wrapper">
             <div class="box a">
-                <p> <a href="AddSales.php">Add Medicine</a></p>
+                <p> <a href="addItems.php">Add Medicine</a></p>
             </div>
             <div class="box b">
-                <p> <a href="SalesReport.php">Stock Report</a></p>
+                <p>
+                    <li><a href="warehouse.php">Warehouse Report</a></li>
+                </p>
             </div>
             <div class="box c">
                 <p> <a href="admin.php">Admin Page</a></p>

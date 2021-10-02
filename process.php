@@ -24,7 +24,7 @@ $priceError = "Price can not be empty or should be numeric only";
 if (!isset($_POST["ItemName"])) {
 
     // for security reason, just in case somebody created a similar form, and tried to submit to process_order, we can also test isset for all the text inputs
-    header("location:AddSales.php");
+    header("location:addItems.php");
     //exit();
 } else {
     $itemname = $_POST["ItemName"];
@@ -42,7 +42,7 @@ if (!isset($_POST["ItemName"])) {
         if (!isset($_POST["Quantity"])) {
 
             // for security reason, just in case somebody created a similar form, and tried to submit to process_order, we can also test isset for all the text inputs
-            header("location:AddSales.php");
+            header("location:addItems.php");
             //exit();
         } else {
             $quantity = $_POST["Quantity"];
@@ -62,7 +62,7 @@ if (!isset($_POST["ItemName"])) {
                 if (!isset($_POST["Description"])) {
 
                     // for security reason, just in case somebody created a similar form, and tried to submit to process_order, we can also test isset for all the text inputs
-                    header("location:AddSales.php");
+                    header("location:addItems.php");
                     //exit();
                 } else {
                     $description = $_POST["Description"];
@@ -81,7 +81,7 @@ if (!isset($_POST["ItemName"])) {
                         // Price
                         if (!isset($_POST["Price"])) {
                             // for security reason, just in case somebody created a similar form, and tried to submit to process_order, we can also test isset for all the text inputs
-                            header("location:AddSales.php");
+                            header("location:addItems.php");
                             //exit();
                         } else {
                             $price = $_POST["Price"];
@@ -106,12 +106,11 @@ if (!isset($_POST["ItemName"])) {
                                 if ($conn) { // connected
                                     echo "<p>Connectiion successful</p>";
 
-                                    $query = "CREATE TABLE IF NOT EXISTS PHPWarehouse  (
+                                    $query = "CREATE TABLE IF NOT EXISTS Warehouse  (
                                     Item_ID INT AUTO_INCREMENT PRIMARY KEY, 
                                     Item_Name VARCHAR(50), 
                                     Quantity  INT(50),
                                     Item_Description  VARCHAR(50),
-                                    Ordertime DATETIME, 
                                     ItemStatus VARCHAR(50),
                                     Price  DECIMAL (5,2)
                                     );";
@@ -125,8 +124,8 @@ if (!isset($_POST["ItemName"])) {
                                         $datetime = date('Y-m-d H:i:s');
 
                                         //insert
-                                        $query = "INSERT INTO PHPWarehouse (Item_Name, Quantity, Item_Description, Ordertime, ItemStatus, Price ) 
-                                        VALUES ('$itemname','$quantity;', '$description', '$datetime', 'INSTOCK', '$price');";
+                                        $query = "INSERT INTO Warehouse (Item_Name, Quantity, Item_Description, ItemStatus, Price ) 
+                                        VALUES ('$itemname','$quantity;', '$description', 'INSTOCK', '$price');";
 
 
                                         $insert_result = mysqli_query($conn, $query);
@@ -144,4 +143,4 @@ if (!isset($_POST["ItemName"])) {
         }
     }
 }
-header("location:AddSales.php?db_msg=$db_msg");
+header("location:addItems.php?db_msg=$db_msg");

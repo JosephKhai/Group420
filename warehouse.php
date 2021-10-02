@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Sales Report</title>
+	<title>Warehouse Stock Status</title>
 	<meta name="description" content="SalesReport">
 	<meta name="keywords" content="SalesReport">
 	<link rel="stylesheet" href="Style/style.css">
@@ -12,16 +12,16 @@
 <body>
 	<ul class="topnav">
 		<li><a href="homepage.php">Home</a></li>
-		<li><a href="AddSales.php">Add Sales</a></li>
-		<li><a href="SalesReport.php">Sales Report</a></li>
+		<li><a href="addItems.php">Add Item</a></li>
+		<li><a href="warehouse.php">Warehouse Report</a></li>
 		<li class="right"><a href="About.php">About</a></li>
 	</ul>
-	<h1>Report Page</h1>
+	<h1>Warehouse Stock Status</h1>
 
 	<br />
 	<br />
 
-	<div class="stockReport">
+	<div class="instockReport">
 
 		<!--for Stock report-->
 		<h3>Stock Report Display available item</h3>
@@ -35,7 +35,7 @@
 
 			//echo "database connected!<br>";
 
-			$query = "SELECT * FROM PHPWarehouse WHERE ItemStatus = 'INSTOCK';";
+			$query = "SELECT * FROM Warehouse WHERE ItemStatus = 'INSTOCK';";
 
 			$result = mysqli_query($conn, $query);
 			if ($result) {	//   query was successfully executed
@@ -49,7 +49,6 @@
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
 						<th><a class="colum_sort" id="quantity" data-order="'.$order.'">Quantity</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">Item_Description</a></th>
-						<th><a class="colum_sort" id="description" data-order="'.$order.'">Ordertime</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">ItemStatus</a></th>
 						<th><a class="colum_sort" id="price" data-order="'.$order.'">Price</a></th>
 
@@ -60,7 +59,6 @@
 						echo "<td>{$record['Item_Name']}</td>";
 						echo "<td>{$record['Quantity']}</td>";
 						echo "<td>{$record['Item_Description']}</td>";
-						echo "<td>{$record['Ordertime']}</td>";
 						echo "<td>{$record['ItemStatus']}</td>";
 						echo "<td>{$record['Price']}</td>";
 						echo "				
@@ -92,7 +90,7 @@
 	<br />
 
 
-	<div class="saleReport">
+	<div class="soldStockReport">
 
 		<!--for Stock report-->
 		<h3>Stock Report Display sold item</h3>
@@ -106,7 +104,7 @@
 
 			//echo "database connected!<br>";
 
-			$query = "SELECT * FROM PHPWarehouse WHERE ItemStatus = 'SOLD';";
+			$query = "SELECT * FROM Warehouse WHERE ItemStatus = 'SOLD';";
 
 			$result = mysqli_query($conn, $query);
 			if ($result) {	//   query was successfully executed
@@ -120,7 +118,6 @@
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
 						<th><a class="colum_sort" id="quantity" data-order="'.$order.'">Quantity</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">Item_Description</a></th>
-						<th><a class="colum_sort" id="description" data-order="'.$order.'">Ordertime</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">ItemStatus</a></th>
 						<th><a class="colum_sort" id="price" data-order="'.$order.'">Price</a></th>
 
@@ -131,7 +128,6 @@
 						echo "<td>{$record['Item_Name']}</td>";
 						echo "<td>{$record['Quantity']}</td>";
 						echo "<td>{$record['Item_Description']}</td>";
-						echo "<td>{$record['Ordertime']}</td>";
 						echo "<td>{$record['ItemStatus']}</td>";
 						echo "<td>{$record['Price']}</td>";
 						echo "			
@@ -178,7 +174,7 @@
 
 			//echo "database connected!<br>";
 
-			$query = "SELECT * FROM PHPWarehouse WHERE ItemStatus = 'OUT_OF_STOCK';";
+			$query = "SELECT * FROM Warehouse WHERE ItemStatus = 'OUT_OF_STOCK';";
 
 			$result = mysqli_query($conn, $query);
 			if ($result) {	//   query was successfully executed
@@ -192,7 +188,6 @@
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
 						<th><a class="colum_sort" id="quantity" data-order="'.$order.'">Quantity</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">Item_Description</a></th>
-						<th><a class="colum_sort" id="description" data-order="'.$order.'">Ordertime</a></th>
 						<th><a class="colum_sort" id="description" data-order="'.$order.'">ItemStatus</a></th>
 						<th><a class="colum_sort" id="price" data-order="'.$order.'">Price</a></th>
 
@@ -203,7 +198,6 @@
 						echo "<td>{$record['Item_Name']}</td>";
 						echo "<td>{$record['Quantity']}</td>";
 						echo "<td>{$record['Item_Description']}</td>";
-						echo "<td>{$record['Ordertime']}</td>";
 						echo "<td>{$record['ItemStatus']}</td>";
 						echo "<td>{$record['Price']}</td>";
 						echo "			
