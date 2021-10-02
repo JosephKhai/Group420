@@ -4,7 +4,7 @@ $mysqli = new mysqli("group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com", "
 /* check connection */
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
+    exit(); 
 }
 
 /* Create table doesn't return a resultset */
@@ -26,6 +26,6 @@ if(isset($_POST['test'])) {
 if(isset($_POST['button2'])) {
     echo "This is Button2 that is selected";
 }
-echo "<p>Connection successful</p>";
+echo "<p>Connection successful</p>"; 
 
 $mysqli->close();

@@ -47,7 +47,7 @@ insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
 ) values (3, "water", 1, "H2O", 10);
 
-
+ 
 insert into Warehouse (
 	Item_ID, Item_Name, Quantity, Item_Description, Price
 ) values (4, "Ear Muffs", 1, "Fluffy", 45);
