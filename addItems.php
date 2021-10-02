@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Add Sales</title>
+    <title>Add Item</title>
     <meta name="description" content="AddSales">
     <meta name="keywords" content="AddSales">
     <link rel="stylesheet" href="Style/style.css">
@@ -18,7 +18,7 @@
     </ul>
 
     <div>
-        <h1>Add Sales</h1>
+        <h1>Add Item</h1>
     </div>
 
     <?php
@@ -27,7 +27,7 @@
     ?>
 
     <div class="AddSales">
-        <h2>Customer Order</h2>
+        <h2>Add Medicine</h2>
 
         <form method="post" action="process.php">
             <fieldset>
