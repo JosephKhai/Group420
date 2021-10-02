@@ -1,27 +1,31 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Sales Report</title>
-        <meta name="description" content="SalesReport">
-        <meta name="keywords" content="SalesReport">
-        <link rel="stylesheet" href="Style/style.css">
-        <link rel="script" href="Scripts/UpdateStock.php">
-    </head>
-    <body>
-    <ul class="topnav">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="AddSales.html">Add Sales</a></li>
-        <li><a href="UpdateStock.html">Update Stock</a></li>
-        <li><a class="active" href="SalesReport.php">Sales Report</a></li>
-        <li class="right" ><a href="About.html">About</a></li>
-    </ul>
 
-    <div><h1>Sales Report</h1></div>
-    <form method="post">
-        <input name="test" type="submit" value="test" /> 
-    </form>
+<head>
+	<title>Sales Report</title>
+	<meta name="description" content="SalesReport">
+	<meta name="keywords" content="SalesReport">
+	<link rel="stylesheet" href="Style/style.css">
+	<link rel="script" href="Scripts/UpdateStock.php">
+</head>
 
-    <?php 
+<body>
+	<ul class="topnav">
+		<li><a href="index.php">Home</a></li>
+		<li><a href="AddSales.html">Add Sales</a></li>
+		<li><a href="UpdateStock.html">Update Stock</a></li>
+		<li><a class="active" href="SalesReport.php">Sales Report</a></li>
+		<li class="right"><a href="About.html">About</a></li>
+	</ul>
+
+	<div>
+		<h1>Sales Report</h1>
+	</div>
+	<form method="post">
+		<input name="test" type="submit" value="test" />
+	</form>
+
+	<?php
 
 	$query = "";
 	require_once "settings.php";	// Load MySQL log in credentials
@@ -46,7 +50,6 @@
 					<th><a class="colum_sort" id="quantity" data-order="'.$order.'" href="#">Quantity</a></th>
 					<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Item_Description</a></th>
 					<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Price</a></th>
-					<th>Action</th>
 				</tr>
 	<?php
 				while ($record) {
@@ -55,7 +58,7 @@
 					echo "<td>{$record['Quantity']}</td>";
 					echo "<td>{$record['Item_Description']}</td>";
 					echo "<td>{$record['Price']}</td>";
-					echo "<td><a href='delete.php?id=" . $record['Item_ID'] . "'>Delete</a></td>				
+					echo "				
 					</tr>";
 
 					$record = mysqli_fetch_assoc($result);
@@ -75,5 +78,6 @@
 
 	?>
 
-    </body>
+</body>
+
 </html>
