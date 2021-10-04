@@ -10,9 +10,7 @@
 
 <body>
     <ul class="topnav">
-        <li><a href="homepage.php">Home</a></li>
-        <li><a href="addItems.php">Add Item</a></li>
-        <li><a href="warehouse.php">Warehouse Report</a></li>
+        <li><a href="index.php">Home</a></li>
         <li class="right"><a href="About.php">About</a></li>
     </ul>
 
