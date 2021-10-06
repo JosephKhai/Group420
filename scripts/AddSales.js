@@ -1,24 +1,19 @@
-function CheckforInt(var s) {
-		return Number.isInteger(s);
+function CheckforInt(number) {
+		return Number.isInteger(number);
 }
 
 function Add() {
 	// Find a <table> element with id="OrderTable"
 	var table = document.getElementById("OrderTable");
-	var itemname = document.getElementsByName("ItemName")[0].value; 
-	var quantity = document.getElementsByName("Quantity")[0].value;
+	var itemname = document.getElementsByName("productOp")[0].value; 
+	var quantity = document.getElementById("Quantity").value;
 	var RowCount = table.tBodies[0].rows.length; //table.tBodies.length;
 	var itemPrice = "0";
-	//PreparedStatement preparedStmt;
-	//ResultSet rs;
 	
-	
-	var user = "vapenation4lyf";
-	var pass = "LLKjMwLSYFW44dbF";
-	var serverDetails = "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com";
-	var portNum = "3306";
-	//var connect = getConnection(serverDetails, user, pass, portNum);
-	//String query = " insert into users (first_name, last_name, date_created, is_admin, num_points)" + " values (?, ?, ?, ?, ?)";
+	//var user = "vapenation4lyf";
+	//var pass = "LLKjMwLSYFW44dbF";
+	//var serverDetails = "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com";
+	//var portNum = "3306";
 	
 	// Create an empty <tr> element and add it to the 1st position of the table:
 	var row = table.insertRow(RowCount);
@@ -29,46 +24,19 @@ function Add() {
 	var priceCell = row.insertCell(2);
 	var totalCell = row.insertCell(3);
 	
-	var mysql = require('mysql');
-
-	var con = mysql.createConnection({
-		host: "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com",
-		user: "vapenation4lyf",
-		password: "LLKjMwLSYFW44dbF",
-		database: "group420"
-	});
-
-	con.connect(function(err) {
-	if (err) throw err;
-		con.query("SELECT Price FROM Warehouse WHERE UPPER(Item_Name) = ?",[itemname], function (err, result, fields) {
-			if (err) throw err;
-			console.log(result);
-			var row = result[key];
-			console.log(row.name);
-			console.log(row.value);
-			});
-	});
-	
 	// Add some text to the new cells:
 	itemCell.innerHTML = itemname;
 	quantCell.innerHTML = quantity;
 	
 	//TODO check price here
-	//if(connect != null) {
-	//	// the mysql insert statement
-	//	query = "SELECT Price FROM Warehouse WHERE UPPER(Item_Name) = ?";
-	//	
-	//	Object.keys(result).forEach(function(key) {
-	//	var row = result[key];
-	//	console.log(row.name)
-	//	rs = preparedStmt.executeQuery();        // Get the result table from the query 
-	//	itemPrice = rs.getString(1);        // Retrieve the first column value
-	//}
+	itemPrice = myPrices.get(itemname);
+	console.debug(itemname);
+	console.debug(myPrices);
 	
 		// check if itemprice is valid
-	if (CheckforInt(itemPrice)) {
-		priceCell.innerHTML = itemPrice;
-		totalCell.innerHTML = itemPrice * quantity;
+	if (CheckforInt(parseInt(itemPrice))) {
+		priceCell.innerHTML = "$" + itemPrice;
+		totalCell.innerHTML = "$" + (itemPrice * quantity);
 	}
 	else { 
 		priceCell.innerHTML = "Error";

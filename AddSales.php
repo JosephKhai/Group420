@@ -6,16 +6,16 @@
     <meta name="description" content="AddSales">
     <meta name="keywords" content="AddSales">
     <link rel="stylesheet" href="Style/style.css">
-	<script src="scripts/AddSales.js"></script>
-</head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+</head>
 <body>
     <ul class="topnav">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="AddSales.html">Add Sales</a></li>
-        <li><a href="UpdateStock.html">Update Stock</a></li>
-        <li><a href="SalesReport.html">Sales Report</a></li>
-        <li class="right"><a href="About.html">About</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a class="active" href="AddSales.php">Add Sales</a></li>
+        <li><a href="UpdateStock.php">Update Stock</a></li>
+        <li><a href="SalesReport.php">Sales Report</a></li>
+        <li class="right"><a href="About.php">About</a></li>
     </ul>
 
     <div>
@@ -26,23 +26,64 @@
         <h2>Customer Order</h2>
     </div>
     <div class="AddSales">
-        <fieldset>
-            <p>
+        
+            <!--<p>
                 <label for="ItemName"><b>Item Name</b></label>
                 <input type="text" placeholder="Enter Item" name="ItemName" required>
+            </p>-->
+        <!--<form id="addSaleslist" name="addSaleslist" method="post" action="<?php echo $PHP_SELF; ?>"> -->
+		<fieldset>
+            <b>Item List :  </b>
+            <select Item Name='productOp'>  
+            <option value="">--- Product ---</option>  
+            <?php
+				$checkconnection = mysqli_connect ("group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com","vapenation4lyf","LLKjMwLSYFW44dbF");  
+                mysqli_select_db ($checkconnection,"group420");  
+				    //Check if it's valid
+			//if(!$checkconnection) {
+
+				//echo '<script>console.log("failed")</script>';
+				//Add it up to the session, and redirect
+
+			//} else{
+
+				//Yay
+				//echo '<script>console.log("sucesss")</script>';
+
+				//}
+				
+                //$select="Item_Name";  
+               // if (isset ($select)&&$select!=""){  
+                //$select=$_POST ['Item_Name'];  
+            //}  
+            ?>  
+            <?php
+                $list=mysqli_query($checkconnection,"SELECT * FROM Warehouse;");  
+				echo "<script> var myPrices = new Map(); </script>";
+            while($row = mysqli_fetch_assoc($list)){  
+                echo "<script> myPrices.set('{$row["Item_Name"]}','{$row["Price"]}');</script>";
+				?>  
+                    <option value="<?php echo $row["Item_Name"]; ?>">
+						<?php echo $row["Item_Name"];?>
+                    </option>  
+                <?php
+                }  
+                ?>  
+				
+            </select>  
+            <!--<input type="submit" name="Submit" value="Select" />  -->
+			 <p>
+                <label for="Quantity"><b>Quantity</b></label>
+                <input type="number" placeholder="Enter Quantity" id="Quantity" min="1" max="999" required>
             </p>
             <p>
-                <label for="Quantity"><b>Quanitity</b></label>
-                <input type="text" placeholder="Enter Quantity" name="Quantity" required>
+                <button id="addBtn" type="button">Add</button>
             </p>
-            <p>
-                <button id="addBtn" type="submit">Add</button>
-            </p>
-
-        </fieldset>
-
+			</fieldset>
+        <!--</form> -->
     </div>
 
+	
     <!--When an item is added (above) display in table bellow-->
     <div>
         <h1>Current Order</h1>
@@ -55,17 +96,16 @@
                 <th>Price</th>
 				<th>Total</th>
             </tr>
-            <!--<tr>
-                <td>This is an item</td>
-                <td>4</td>
-                <td>420.00</td>
-				<td>1680.00</td>
-            </tr>-->
         </table>
     </div>
-
-
-    <button id="processBtn" type="submit">Process</button>
+	<button id="processBtn" type="submit">Process</button>
+		<script src="scripts/AddSales.js"></script>
+		<?php	
+			//echo "<script> var myPrices = new Map(); </script>";
+            //while($row = mysqli_fetch_assoc($list)){  
+            //echo "<script> myPrices.set('{$row["Item_Name"]}','{$row["Price"]}');</script>";
+			//}
+		?>
 </body>
 
 </html>
