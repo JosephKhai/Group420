@@ -17,7 +17,7 @@
         <li><a href="SalesReport.php">Sales Report</a></li>
         <li class="right"><a href="About.php">About</a></li>
     </ul>
-
+ 
     <div>
         <h1>Add Sales</h1>
     </div>
@@ -25,9 +25,10 @@
     <div>
         <h2>Customer Order</h2>
     </div>
-    <div class="AddSales">
-        
-            <!--<p>
+
+    <div class="AddSales"> 
+        <fieldset>
+            <p>
                 <label for="ItemName"><b>Item Name</b></label>
                 <input type="text" placeholder="Enter Item" name="ItemName" required>
             </p>-->

@@ -1,8 +1,10 @@
+
 function CheckforInt(number) {
 		return Number.isInteger(number);
 }
 
-function Add() {
+
+function Add() { 
 	// Find a <table> element with id="OrderTable"
 	var table = document.getElementById("OrderTable");
 	var itemname = document.getElementsByName("productOp")[0].value; 
@@ -10,10 +12,12 @@ function Add() {
 	var RowCount = table.tBodies[0].rows.length; //table.tBodies.length;
 	var itemPrice = "0";
 	
+
 	//var user = "vapenation4lyf";
 	//var pass = "LLKjMwLSYFW44dbF";
 	//var serverDetails = "group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com";
 	//var portNum = "3306";
+
 	
 	// Create an empty <tr> element and add it to the 1st position of the table:
 	var row = table.insertRow(RowCount);
