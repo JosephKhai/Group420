@@ -7,6 +7,10 @@
 	<meta name="keywords" content="SalesReport">
 	<link rel="stylesheet" href="Style/style.css">
 	<link rel="script" href="Scripts/UpdateStock.php">
+	<!--Get your code at fontawesome.com-->
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<!--Get your own code at fontawesome.com-->
+
 </head>
 
 <body>
@@ -81,7 +85,11 @@
 
 		?>
 
-		<input type="button" name="generateStockCSV" value="Generate CSV" />
+		<div class="exportData div">
+			<div class="exportData">
+				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+			</div>
+		</div>
 
 	</div>
 
@@ -150,7 +158,11 @@
 
 		?>
 
-		<input type="button" name="generateSalesCSV" value="Generate CSV" />
+		<div class="exportData div">
+			<div class="exportData">
+				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+			</div>
+		</div>
 
 	</div>
 
@@ -220,7 +232,11 @@
 
 		?>
 
-		<input type="button" name="generateSalesCSV" value="Generate CSV" />
+		<div class="exportData div">
+			<div class="exportData">
+				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+			</div>
+		</div>
 
 	</div>
 
