@@ -48,6 +48,12 @@
 				if ($record) {		//   record exist
 					echo "<table class='salesReportTable'>";
 		?>
+
+					<div class="col-md-12 head">
+						<div class="exportData">
+							<a href="export_in_stock.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+						</div>
+					</div>
 					<tr>
 						<th><a class="colum_sort" id="id" data-order="'.$order.'">Item_ID</a></th>
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
@@ -85,11 +91,7 @@
 
 		?>
 
-		<div class="exportData div">
-			<div class="exportData">
-				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
-			</div>
-		</div>
+
 
 	</div>
 
@@ -121,6 +123,11 @@
 				if ($record) {		//   record exist
 					echo "<table class='salesReportTable'>";
 		?>
+					<div class="col-md-12 head">
+						<div class="exportData">
+							<a href="export_sold_stock.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+						</div>
+					</div>
 					<tr>
 						<th><a class="colum_sort" id="id" data-order="'.$order.'">Item_ID</a></th>
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
@@ -158,11 +165,7 @@
 
 		?>
 
-		<div class="exportData div">
-			<div class="exportData">
-				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
-			</div>
-		</div>
+
 
 	</div>
 
@@ -195,6 +198,12 @@
 				if ($record) {		//   record exist
 					echo "<table class='salesReportTable'>";
 		?>
+
+					<div class="col-md-12 head">
+						<div class="exportData">
+							<a href="export_out_of_stock.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+						</div>
+					</div>
 					<tr>
 						<th><a class="colum_sort" id="id" data-order="'.$order.'">Item_ID</a></th>
 						<th><a class="colum_sort" id="name" data-order="'.$order.'">Item_Name</a></th>
@@ -232,11 +241,7 @@
 
 		?>
 
-		<div class="exportData div">
-			<div class="exportData">
-				<a href="exportData.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
-			</div>
-		</div>
+
 
 	</div>
 
