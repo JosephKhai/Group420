@@ -17,7 +17,7 @@
         <li><a href="SalesReport.php">Sales Report</a></li>
         <li class="right"><a href="About.php">About</a></li>
     </ul>
- 
+
     <div>
         <h1>Add Sales</h1>
     </div>
@@ -26,9 +26,9 @@
         <h2>Customer Order</h2>
     </div>
 
-    <div class="AddSales"> 
-        <fieldset>
-            <p>
+    <div class="AddSales">
+        
+            <!--<p>
                 <label for="ItemName"><b>Item Name</b></label>
                 <input type="text" placeholder="Enter Item" name="ItemName" required>
             </p>-->
@@ -75,10 +75,12 @@
             <!--<input type="submit" name="Submit" value="Select" />  -->
 			 <p>
                 <label for="Quantity"><b>Quantity</b></label>
-                <input type="number" placeholder="Enter Quantity" id="Quantity" min="1" max="999" required>
+                <input type="number" placeholder="Enter Quantity" id="Quantity" pattern="[0-9]{3}" min="1" max="999" required>
             </p>
             <p>
                 <button id="addBtn" type="button">Add</button>
+				
+
             </p>
 			</fieldset>
         <!--</form> -->
