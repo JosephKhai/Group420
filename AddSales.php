@@ -25,6 +25,7 @@
     <div>
         <h2>Customer Order</h2>
     </div>
+
     <div class="AddSales">
         
             <!--<p>
@@ -79,6 +80,7 @@
             <p>
                 <button id="addBtn" type="button">Add</button>
 				
+
             </p>
 			</fieldset>
         <!--</form> -->

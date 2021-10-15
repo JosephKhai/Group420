@@ -2,6 +2,7 @@ function CheckforInt(number) {
 		return Number.isInteger(number);
 }
 
+
 function parseQuant(number)
 {
 	result = false;
@@ -16,6 +17,7 @@ function parseQuant(number)
 	return result;
 }
 
+
 function Add() {
 	// Find a <table> element with id="OrderTable"
 	var table = document.getElementById("OrderTable");
@@ -24,9 +26,9 @@ function Add() {
 	var RowCount = table.tBodies[0].rows.length; //table.tBodies.length;
 	var itemPrice = "0";
 	
+
 	var result = true;
 	var errMsg = "";
-	
 	
 	if(!parseQuant(parseInt(quantity))){
 		errMsg += "Quantity cannot be zero and must be between 1-999.\n";
