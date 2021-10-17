@@ -5,114 +5,126 @@
     <title>Login Page</title>
     <meta name="description" content="index">
     <meta name="keywords" content="index">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
 
-    <ul class="topnav">
-        <li><a class="active" href="index.php">Home</a></li>
-        <li class="right"><a href="About.php">About</a></li>
-    </ul>
+    <div id="page-container">
+		<div id="content-wrap">
 
-    <div>
-        <h1>Login Page</h1>
-    </div>
+            <ul class="topnav">
+                <li><a class="active" href="index.php">Home</a></li>
+            </ul>
 
-    <?php
+            <div>
+                <h1>Login Page</h1>
+            </div>
 
-    require_once "settings.php";    // Load MySQL log in credentials
-    $conn = mysqli_connect($host, $user, $pwd, $sql_db);    // Log in and use database
+            <?php
 
-    $error = "username/password incorrect";
-    session_start();
+            require_once "settings.php";    // Load MySQL log in credentials
+            $conn = mysqli_connect($host, $user, $pwd, $sql_db);    // Log in and use database
 
-    if (isset($_POST["submit"])) {
-        if (empty($_POST["username"]) || empty($_POST["password"])) {
-            echo '<script>alert("Both Fields are required")</script>';
-        } else {
-            //define username and password
-            $username = $_POST["username"];
-            $password = $_POST["password"];
+            $error = "username/password incorrect";
+            session_start();
 
-            $username = stripslashes($username);
-            $password = stripslashes($password);
+            if (isset($_POST["submit"])) {
+                if (empty($_POST["username"]) || empty($_POST["password"])) {
+                    echo '<script>alert("Both Fields are required")</script>';
+                } else {
+                    //define username and password
+                    $username = $_POST["username"];
+                    $password = $_POST["password"];
 
-            $username = mysqli_real_escape_string($conn, $username);
-            $username = mysqli_real_escape_string($conn, $password);
+                    $username = stripslashes($username);
+                    $password = stripslashes($password);
 
-            //$result = mysqli_query("SELECT * FROM userlogin WHERE username ='$username' AND  userpassword = '$password' ") or die("failed to query database", mysqli_error());
+                    $username = mysqli_real_escape_string($conn, $username);
+                    $username = mysqli_real_escape_string($conn, $password);
 
-            $query = "SELECT * FROM userlogin WHERE username ='$username' AND  userpassword = '$password' ";
-            $result = mysqli_query($conn, $query);
+                    //$result = mysqli_query("SELECT * FROM userlogin WHERE username ='$username' AND  userpassword = '$password' ") or die("failed to query database", mysqli_error());
 
-            if (mysqli_num_rows($result) > 0) {
+                    $query = "SELECT * FROM userlogin WHERE username ='$username' AND  userpassword = '$password' ";
+                    $result = mysqli_query($conn, $query);
+
+                    if (mysqli_num_rows($result) > 0) {
 
 
-                while ($row = mysqli_fetch_array($result)) {
+                        while ($row = mysqli_fetch_array($result)) {
 
-                    if ($row['username'] == $username && $row['userpassword'] == $password) {
-                        //return true
-                        $_SESSION['username'] = $username; // Initializing Session
-                        header("location: homepage.php"); //redirecting to home page. 
+                            if ($row['username'] == $username && $row['userpassword'] == $password) {
+                                //return true
+                                $_SESSION['username'] = $username; // Initializing Session
+                                header("location: homepage.php"); //redirecting to home page. 
 
+                            } else {
+                                //return false
+                                //echo '<script>alert("Wrong User password")</script>';
+                                $_SESSION["error"] = $error;
+                            }
+                        }
                     } else {
-                        //return false
-                        //echo '<script>alert("Wrong User password")</script>';
+                        // echo '<script>alert("Wrong User Details")</script>';
                         $_SESSION["error"] = $error;
                     }
                 }
-            } else {
-                // echo '<script>alert("Wrong User Details")</script>';
-                $_SESSION["error"] = $error;
             }
-        }
-    }
 
-    mysqli_close($conn); //closing connection
+            mysqli_close($conn); //closing connection
 
-    ?>
+            ?>
 
-    <!--Signin form Section-->
+            <!--Signin form Section-->
 
-    <div class="login-form">
-        <h3>Please Login</h3>
+            <div class="login-form">
+                <h3>Please Login</h3>
 
-        <form method="post" action="index.php">
-            <fieldset>
-                <p>
-                    <label for="name">Enter Username :</label>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="username" />
-                </p>
-                <p>
-                    <label for="password">Enter Password :</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="**********" />
-                </p>
-                <p>
-                    <span class="error">
-                        <?php
-                        if (isset($_SESSION["error"])) {
-                            $error = $_SESSION["error"];
-                            echo "<span>$error</span>";
-                        }
-                        ?>
-                    </span>
-                </p>
+                <form method="post" action="index.php">
+                    <fieldset>
+                        <p>
+                            <label for="name">Enter Username :</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="username" />
+                        </p>
+                        <p>
+                            <label for="password">Enter Password :</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="**********" />
+                        </p>
+                        <p>
+                            <span class="error">
+                                <?php
+                                if (isset($_SESSION["error"])) {
+                                    $error = $_SESSION["error"];
+                                    echo "<span>$error</span>";
+                                }
+                                ?>
+                            </span>
+                        </p>
 
-                <p>
-                    <input name="submit" type="submit" value="Login " />
-                </p>
+                        <p>
+                            <input name="submit" type="submit" value="Login " />
+                        </p>
 
 
 
-            </fieldset>
+                    </fieldset>
 
-        </form>
+                </form>
 
-    </div>
+            </div>
 
 
 
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p> People Health Pharmacy | Group 420</p>
+
+        </div>
 
     </div>
 

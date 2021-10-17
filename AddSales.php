@@ -6,22 +6,23 @@
     <meta name="keywords" content="AddSales">
     <link rel="stylesheet" href="Style/style.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <ul class="topnav">
-        <li><a href="index.php">Home</a></li>
-        <li><a class="active" href="AddSales.php">Add Sales</a></li>
-        <li><a href="UpdateStock.php">Update Stock</a></li>
-        <li><a href="SalesReport.php">Sales Report</a></li>
-        <li class="right"><a href="About.php">About</a></li>
-    </ul>
 
-    <div>
-        <h1>Add Sales</h1>
-    </div>
 
+        <div id="page-container">
+		<div id="content-wrap">
+            <ul class="topnav">
+                <li><a href="homepage.php">Home</a></li>
+                <li><a class="active" href="AddSales.php">Add Sales</a></li>
+                <li><a href="SalesReport.php">Sales Report</a></li>
+            </ul>
+
+             
     <div>
-        <h2>Customer Order</h2>
+        <h2 id="customerorder">Customer Order</h2>
     </div>
     <div class="AddSales">
     <!--<form id="addSaleslist" name="addSaleslist" method="post" action="sales_process.php">-->
@@ -84,7 +85,7 @@
         <h1>Current Order</h1>
     </div>
     <div>
-        <table class="CurrentCustomerOrder" id="OrderTable">
+        <table class="table table-dark table-striped table-bordered" id="OrderTable">
             <tr>
                 <th>Item</th>
                 <th>Quantity</th>
@@ -97,6 +98,13 @@
 		<div id="resultdiv"> </div>
 	<!--</form>-->
 		<script src="scripts/AddSales.js"></script>
+      
+      </div>
+  </div>
+    <div class="footer">
+        <p> People Health Pharmacy | Group 420</p>
+     </div>
+
 </body>
 
 </html>
