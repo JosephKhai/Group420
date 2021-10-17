@@ -27,38 +27,58 @@
     <!--<form id="addSaleslist" name="addSaleslist" method="post" action="sales_process.php">-->
 		<fieldset>
             <b>Item List :  </b>
-            <select Item Name='productOp'>  
-            <option value="">--- Product ---</option>  
+            <select Item Name='productOp'>
+            <option value="">--- Product ---</option>
             <?php
-				$checkconnection = mysqli_connect ("group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com","vapenation4lyf","LLKjMwLSYFW44dbF");  
-                mysqli_select_db ($checkconnection,"group420");  
-            ?>  
+				$checkconnection = mysqli_connect ("group420.cguno6verhdn.ap-southeast-2.rds.amazonaws.com","vapenation4lyf","LLKjMwLSYFW44dbF");
+                mysqli_select_db ($checkconnection,"group420");
+				    //Check if it's valid
+			//if(!$checkconnection) {
+
+				//echo '<script>console.log("failed")</script>';
+				//Add it up to the session, and redirect
+
+			//} else{
+
+				//Yay
+				//echo '<script>console.log("sucesss")</script>';
+
+				//}
+
+                //$select="Item_Name";
+               // if (isset ($select)&&$select!=""){
+                //$select=$_POST ['Item_Name'];
+            //}
+            ?>
             <?php
-                $list=mysqli_query($checkconnection,"SELECT * FROM Warehouse;");  
+                $list=mysqli_query($checkconnection,"SELECT * FROM Warehouse;");
 				echo "<script> var myPrices = new Map(); </script>";
-            while($row = mysqli_fetch_assoc($list)){  
+            while($row = mysqli_fetch_assoc($list)){
                 echo "<script> myPrices.set('{$row["Item_Name"]}','{$row["Price"]}');</script>";
-				?>  
+				?>
                     <option value="<?php echo $row["Item_Name"]; ?>">
 						<?php echo $row["Item_Name"];?>
-                    </option>  
+                    </option>
                 <?php
-                }  
-                ?>  
-				
-            </select>  
+                }
+                ?>
+
+            </select>
             <!--<input type="submit" name="Submit" value="Select" />  -->
 			 <p>
-                <label for="Quantity"><b>Quantity:</b></label>
+                <label for="Quantity"><b>Quantity</b></label>
                 <input type="number" placeholder="Enter Quantity" id="Quantity" pattern="[0-9]{3}" min="1" max="999" required>
             </p>
             <p>
                 <button id="addBtn" type="button">Add</button>
-				<!--<button id="processBtn2" type="button">test</button> -->
+
+
             </p>
 			</fieldset>
-        
+        <!--</form> -->
     </div>
+
+
     <!--When an item is added (above) display in table bellow-->
     <div>
         <h1>Current Order</h1>
