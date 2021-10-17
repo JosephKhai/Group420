@@ -3,10 +3,9 @@
 
 <head>
     <title>Add Item</title>
-    <meta name="description" content="AddSales">
-    <meta name="keywords" content="AddSales">
+    <meta name="description" content="Additem">
+    <meta name="keywords" content="Additem">
     <link rel="stylesheet" href="Style/style.css">
-    <script src="scripts/AddSales.js"></script>
 </head>
 
 <body>
