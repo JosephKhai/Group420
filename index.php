@@ -12,7 +12,6 @@
 
     <ul class="topnav">
         <li><a class="active" href="index.php">Home</a></li>
-        <li class="right"><a href="About.php">About</a></li>
     </ul>
 
     <div>
