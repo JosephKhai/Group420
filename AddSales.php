@@ -66,7 +66,7 @@
 
             </select>
             <!--<input type="submit" name="Submit" value="Select" />  -->
-			 <p>
+			 <p id='addsalesquantity'>
                 <label for="Quantity"><b>Quantity</b></label>
                 <input type="number" placeholder="Enter Quantity" id="Quantity" pattern="[0-9]{3}" min="1" max="999" required>
             </p>
