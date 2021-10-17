@@ -8,7 +8,7 @@ $conn = mysqli_connect($host, $user, $pwd, $sql_db);    // Log in and use databa
 //delete record
 function deleteRecord(mysqli $conn, $id)
 {
-    $query = "UPDATE FROM Warehouse Where Item_ID = $id;";
+    $query = "DELETE FROM Warehouse Where Item_ID = $id;";
     $result = mysqli_query($conn, $query);
     if (!$result) {
         echo "Error Deleting record!";
@@ -25,5 +25,5 @@ if (empty($id)) {
 }
 
 deleteRecord($conn, $id);
-header('location: warehouse.php');
+header('location: admin.php');
 die;
