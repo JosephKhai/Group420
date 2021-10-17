@@ -81,6 +81,7 @@ function ProcessItems(){
 	var errMsg = "";
 	var price;
 	var table = document.getElementById("OrderTable");
+	var div = document.getElementById("resultdiv");
 	var RowCount = table.tBodies[0].rows.length; //table.tBodies.length;
 
 	if(RowCount < 2)
@@ -126,6 +127,7 @@ function ProcessItems(){
 		xhr.send(data);
 
 		console.log(JSON.stringify(theItems));
+		div.innerHTML += "<p id=\"processResult\"> Successfully processed Items!! </p>"
 	}
 
 	if (errMsg != "") {

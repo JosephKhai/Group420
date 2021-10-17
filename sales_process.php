@@ -24,7 +24,7 @@
 		//{
 		//	echo "name: $itemname count: $quant cost: $price\n";
 		//}
-
+		date_default_timezone_set('Australia/Melbourne');
 		$name = "";
 		$quant = "";
 		$price = "";

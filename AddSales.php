@@ -94,7 +94,7 @@
         </table>
     </div>
 		<button id="processBtn" type="button" value="postit">Process</button>
-    <div>
+		<div id="resultdiv"> </div>
 	<!--</form>-->
 		<script src="scripts/AddSales.js"></script>
 </body>
