@@ -28,7 +28,8 @@ ul.topnav {
       color: black; 
   }
   ul.topnav li a.active {
-      background-color: #69c2c2;
+      background-color: red;
+
   }
   ul.topnav li.right {
       float: right;
@@ -56,6 +57,11 @@ ul.topnav {
     clear: both;
 }
 
+
+#addbutton {
+    position: absolute;
+}
+
 /* heading 1 */
 
 h1 {
@@ -63,6 +69,16 @@ h1 {
     font-weight:bold;
     text-align: center;
     
+}
+
+h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+  }
+
+h3 {
+    text-align: center;
 }
 
 /*body*/
@@ -85,29 +101,26 @@ body {
     width: 50%;
 }
 
-/*
+
 input[type=text] {
-    width: 30%;
-    padding: 5px 5px;
-    margin: 4px;
+    width: 20%;
+    padding: 3px 3px;
+    margin-left: 40%;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 input[type=password] {
-    width: 30%;
-    padding: 5px 5px;
-    margin: 4px;
+    width: 20%;
+    padding: 3px 3px;
+    margin-left: 40%;
     box-sizing: border-box;
     border-radius: 5px;
 }
-*/
 
+/* add items */
 
-
-/* add sale */
-
-.AddSales{
+.AddItems{
     clear: both;
     width: 62%;
     padding: 0.625em;
@@ -115,74 +128,50 @@ input[type=password] {
     text-align: center;
     margin: auto;
     width: 50%;
+    height: 350px;
 }
 
-/* heading 1 */
-
-
+#haddmed {
+    color: blue;
+}
 
 /*body*/
 body {
     margin: auto;
     text-align: center;
-    background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg)
+    background-image: url(https://wallpapercave.com/wp/mwGE0Fi.jpg);
+    background-size: cover;
   }
 
-/*table style properties */
-table {
-    padding: 10%;
-    margin: 10%;
-    width: 62%;
-    margin: 10px auto;
-    clear: left;
+
+#additemstable {
+    width: 80%;
+    margin-left: 10%;
 }
 
-th, td {
-    padding: 5px;
-    border: solid 1px;
-    text-align: center;
+#warehousetable1 {
+    width: 90%;
+    margin-left: 5%;
 }
 
-table, td, th {
-    border-collapse: collapse;
+#warehousetable2 {
+    width: 90%;
+    margin-left: 5%;
 }
 
-/*table hover background-color and hover border properties */
-
-table, td :hover {
-    background-color: #4b86b4;
+#warehousetable3 {
+    width: 90%;
+    margin-left: 5%;
 }
 
-/*if the mouse is over the table, table cell background color will change */
-
-table {
-    background-color: #afeeee;
+#admintable {
+    width: 80%;
+    margin-left: 10%;
 }
 
-/*table head content properties and value */
-
-table th {
-    background-color: green;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-
-/*when user click in inside text input background color will change */
-input[type=text]:focus {
-    border: 2px solid #4b86b4;
-    background-color: white;
-}
-
-
-
-input[type=submit] {
-    background-color: #014a66;
-    color: antiquewhite;
-    padding: 8px 8px;
-    text-align: center;
-    font-size: 12px;
-    cursor: pointer;
+#salesreporttable {
+    width: 80%;
+    margin-left: 10%;
 }
 
 
@@ -196,17 +185,25 @@ input[type=submit] {
     align-items: center;
   }
   
+  #welcome {
+      padding: 5px;
+  }
+
   .box {
     background-color: rgb(4, 46, 73);
     border-radius: 5px;
-    font-size: 100%;
     padding: 50px;
+    background-size: 50px;
+    align-self: flex-start;
+    size-adjust: relative;
   }
 
 
   .dashboard{
-      background-color: #69c2c2;
+      margin-left: 40%;
+      width: 25%;
   }
+
 
 
   a:link, a:visited {
@@ -219,12 +216,88 @@ input[type=submit] {
   }
 
   a:hover, a:active {
-    background-color: green;
+    background-color: gray;
   }
 
   .error{
       color: red;
       font-size: 12px;
       font-style: italic;
+  }
+
+/* warehouse page */
+
+.exportData {
+    text-align: center;
+}
+
+/* admin page*/
+
+.searchItem {
+    text-align: center;
+}
+
+.updateItemStatus {
+    text-align: center;
+}
+
+#searchq {
+    size: 50px;
+}
+
+/* add sales */
+
+#customerorder {
+    text-align: center;
+    padding-bottom: 10px;
+    color: blue;
+}
+
+.AddSales {
+    margin-left: 45%;
+    padding: 2px;
+}
+
+#addBtn {
+    margin-left: 6%;
+}
+
+#addsalesquantity {
+    padding: 10px;
+}
+
+#Quantity {
+    width: 125px;
+}
+
+#OrderTable {
+    width: 40%;
+    margin-left: 30%;
+}
+
+#processBtn {
+    margin-left: 47.5%;
+}
+
+
+/* footer */
+
+ #page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+#content-wrap {
+    padding-bottom: 2.5rem;    
+  }
+  
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;      
+    background-color: #333;
+    text-align: center;      
+    color: white;
   }
 
