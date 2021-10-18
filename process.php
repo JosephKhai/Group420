@@ -101,6 +101,7 @@ if (!isset($_POST["ItemName"])) {
                                 $_SESSION['Quantity'] = $quantity;
                                 $_SESSION['Description'] = $description;
                                 $_SESSION['Price'] = $price;
+                                
 
 
                                 if ($conn) { // connected
