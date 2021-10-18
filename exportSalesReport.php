@@ -27,7 +27,8 @@ if ($conn) { // connected
     }
     */
 
-    $query = "SELECT * FROM CustomerOrder ORDER BY Item_Name ASC";
+    $query = "SELECT Item_name, SUM(Quantity) as Quantity, Price FROM CustomerOrder  GROUP BY Item_name;";
+    //$query = "SELECT * FROM CustomerOrder ORDER BY Item_Name ASC";
 
     //execute the query -we should really check to see if the database exists first.
     $result = mysqli_query($conn, $query);
@@ -41,7 +42,7 @@ if ($conn) { // connected
 
 
         //set column headers
-        $fields = array('Transaction No', 'Item Name', 'Quantity', 'Price', 'Total', 'Date of Sale', 'Time of sale');
+        $fields = array('Item Name', 'Quantity', 'Price', 'Total');
         fputcsv($f, $fields, $delimiter);
 
         //output each row of the data, format line as csv and write to file pointer
@@ -50,7 +51,7 @@ if ($conn) { // connected
             $total = $row['Price'] * $row['Quantity'];
 
             //$status = ($row['status'] == 1) ? 'Active' : 'Inactive';
-            $lineData = array($row['Transaction_number'], $row['Item_name'], $row['Quantity'], $row['Price'], $total, $row['Date_Of_Sale'], $row['Time_Of_Sale']);
+            $lineData = array($row['Item_name'], $row['Quantity'], $row['Price'], $total);
             fputcsv($f, $lineData, $delimiter);
         }
 

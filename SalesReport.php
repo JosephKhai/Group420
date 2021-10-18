@@ -48,7 +48,7 @@
 
 			if ($conn) { // connected
 
-				$query = "SELECT * FROM CustomerOrder;";
+				$query = "SELECT Item_name, SUM(Quantity) as Quantity, Price FROM CustomerOrder  GROUP BY Item_name;";
 
 				$result = mysqli_query($conn, $query);
 				if ($result) {	//   query was successfully executed
@@ -58,25 +58,23 @@
 						echo "<table id='salesreporttable' class='table table-dark table-striped table-bordered'>";
 			?>
 						<tr>
-							<th><a class="colum_sort" id="id" data-order="'.$order.'" href="#">Transaction Number</a></th>
+
 							<th><a class="colum_sort" id="name" data-order="'.$order.'" href="#">Item_Name</a></th>
 							<th><a class="colum_sort" id="quantity" data-order="'.$order.'" href="#">Quantity</a></th>
 							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Price</a></th>
 							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Total</a></th>
-							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Date Of Sale</a></th>
-							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Time Of Sale</a></th>
+
 						</tr>
 			<?php
 
 						while ($record) {
 							$total = $record['Price'] * $record['Quantity'];
-							echo "<tr><td>{$record['Transaction_number']}</td>";
+
 							echo "<td>{$record['Item_name']}</td>";
 							echo "<td>{$record['Quantity']}</td>";
 							echo "<td>\${$record['Price']}</td>";
 							echo "<td>\$$total</td>";
-							echo "<td>{$record['Date_Of_Sale']}</td>";
-							echo "<td>{$record['Time_Of_Sale']}</td>";
+
 							echo "				
 							</tr>";
 
