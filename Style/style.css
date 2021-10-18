@@ -103,9 +103,9 @@ body {
 
 
 input[type=text] {
-    width: 20%;
-    padding: 3px 3px;
-    margin-left: 40%;
+    width: 40%;
+    padding: 2px 2px;
+    margin-left: 10%;
     box-sizing: border-box;
     border-radius: 5px;
 }
@@ -117,6 +117,8 @@ input[type=password] {
     box-sizing: border-box;
     border-radius: 5px;
 }
+
+
 
 /* add items */
 
