@@ -5,8 +5,9 @@
     <title>Help</title>
     <meta name="description" content="Help">
     <meta name="keywords" content="Help">
-    <link rel="stylesheet" href="Style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <div id="page-container">
 		<div id="content-wrap">
 
-            <h3>Update Data</h3>
+            <h3 id='updateDataHeading'>Update Data</h3>
 
             <?php
             //for Edit function
@@ -74,7 +75,8 @@
             ?>
 
             <form method="POST">
-                <label for="itemname">Item name</label>
+                <div>
+                <label for="itemname">Item Name</label>
                 <input type="text" name="itemname" value="<?php echo $data['Item_Name'] ?>" placeholder="Enter item name" Required>
                 <label for="quantity">Quantity</label>
                 <input type="text" name="quantity" value="<?php echo $data['Quantity'] ?>" placeholder="Enter quantity" Required>
@@ -82,15 +84,15 @@
                 <input type="text" name="description" value="<?php echo $data['Item_Description'] ?>" placeholder="Enter description" Required>
                 <label for="price">Price</label>
                 <input type="text" name="price" value="<?php echo $data['Price'] ?>" placeholder="Enter price" Required>
-                <input type="submit" name="update" value="Update">
+                <p id='editUpdateBtn'>
+                    <input type="submit" name="update" value="Update">
+                </p>
+                </div>
             </form>
 
         
         </div>
 
-        <div class="footer">
-            <p> People Health Pharmacy | Group 420</p>
-        </div>
 
     </div>
 
