@@ -48,7 +48,7 @@
 
 			if ($conn) { // connected
 
-				$query = "SELECT * FROM Warehouse;";
+				$query = "SELECT * FROM CustomerOrder;";
 
 				$result = mysqli_query($conn, $query);
 				if ($result) {	//   query was successfully executed
@@ -62,15 +62,19 @@
 							<th><a class="colum_sort" id="name" data-order="'.$order.'" href="#">Item_Name</a></th>
 							<th><a class="colum_sort" id="quantity" data-order="'.$order.'" href="#">Quantity</a></th>
 							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Price</a></th>
+							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Total</a></th>
 							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Date Of Sale</a></th>
 							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Time Of Sale</a></th>
 						</tr>
 			<?php
+
 						while ($record) {
+							$total = $record['Price'] * $record['Quantity'];
 							echo "<tr><td>{$record['Transaction_number']}</td>";
 							echo "<td>{$record['Item_name']}</td>";
 							echo "<td>{$record['Quantity']}</td>";
-							echo "<td>{$record['Price']}</td>";
+							echo "<td>\${$record['Price']}</td>";
+							echo "<td>\$$total</td>";
 							echo "<td>{$record['Date_Of_Sale']}</td>";
 							echo "<td>{$record['Time_Of_Sale']}</td>";
 							echo "				

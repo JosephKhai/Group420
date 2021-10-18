@@ -39,14 +39,18 @@ if ($conn) { // connected
         //Create a file pointer
         $f = fopen('php://memory', 'w');
 
+
         //set column headers
-        $fields = array('Transaction No', 'Item Name', 'Quantity', 'Price', 'Date of Sale', 'Time of sale');
+        $fields = array('Transaction No', 'Item Name', 'Quantity', 'Price', 'Total', 'Date of Sale', 'Time of sale');
         fputcsv($f, $fields, $delimiter);
 
         //output each row of the data, format line as csv and write to file pointer
         while ($row = $result->fetch_assoc()) {
+
+            $total = $row['Price'] * $row['Quantity'];
+
             //$status = ($row['status'] == 1) ? 'Active' : 'Inactive';
-            $lineData = array($row['Transaction_number'], $row['Item_name'], $row['Quantity'], $row['Price'], $row['Date_Of_Sale'], $row['Time_Of_Sale']);
+            $lineData = array($row['Transaction_number'], $row['Item_name'], $row['Quantity'], $row['Price'], $total, $row['Date_Of_Sale'], $row['Time_Of_Sale']);
             fputcsv($f, $lineData, $delimiter);
         }
 
