@@ -16,21 +16,30 @@
 		<div id="content-wrap">
 
 			<ul class="topnav">
-			<li><a href="homepage.php">Home</a></li>
-                <li><a href="addItems.php">Add Item</a></li>
-                <li><a href="warehouse.php">Warehouse Report</a></li>
-                <li><a href="AddSales.php">Add Sales</a></li>
-                <li><a href="SalesReport.php">Sales Report</a></li>
-                <li><a href="admin.php">Manage</a></li>
+				<li><a href="homepage.php">Home</a></li>
+				<li><a href="addItems.php">Add Item</a></li>
+				<li><a href="warehouse.php">Warehouse Report</a></li>
+				<li><a href="AddSales.php">Add Sales</a></li>
+				<li><a href="SalesReport.php">Sales Report</a></li>
+				<li><a href="admin.php">Manage</a></li>
 			</ul>
 
 			<div>
 				<h1>Sales Report</h1>
 			</div>
-			<form method="post">
-				<input name="test" type="submit" value="test" />
-			</form>
+			<div class="col-md-12 head">
 
+				<div class="exportData">
+					<!--
+					<label for="fromdate">From</label>
+					<input type="date" name="fromdate" id="fromdate">
+					<label for="fromdate">To</label>
+					<input type="date" name="todate" id="todate">
+-->
+					<a href="exportSalesReport.php">Download CSV File <i class='fas fa-cloud-download-alt'></i></a>
+				</div>
+
+			</div>
 			<?php
 
 			$query = "";
@@ -49,19 +58,21 @@
 						echo "<table id='salesreporttable' class='table table-dark table-striped table-bordered'>";
 			?>
 						<tr>
-							<th><a class="colum_sort" id="id" data-order="'.$order.'" href="#">Item_ID</a></th> 
+							<th><a class="colum_sort" id="id" data-order="'.$order.'" href="#">Transaction Number</a></th>
 							<th><a class="colum_sort" id="name" data-order="'.$order.'" href="#">Item_Name</a></th>
 							<th><a class="colum_sort" id="quantity" data-order="'.$order.'" href="#">Quantity</a></th>
-							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Item_Description</a></th>
-							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Price</a></th>
+							<th><a class="colum_sort" id="description" data-order="'.$order.'" href="#">Price</a></th>
+							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Date Of Sale</a></th>
+							<th><a class="colum_sort" id="price" data-order="'.$order.'" href="#">Time Of Sale</a></th>
 						</tr>
 			<?php
 						while ($record) {
-							echo "<tr><td>{$record['Item_ID']}</td>"; 
-							echo "<td>{$record['Item_Name']}</td>";
+							echo "<tr><td>{$record['Transaction_number']}</td>";
+							echo "<td>{$record['Item_name']}</td>";
 							echo "<td>{$record['Quantity']}</td>";
-							echo "<td>{$record['Item_Description']}</td>";
 							echo "<td>{$record['Price']}</td>";
+							echo "<td>{$record['Date_Of_Sale']}</td>";
+							echo "<td>{$record['Time_Of_Sale']}</td>";
 							echo "				
 							</tr>";
 
@@ -81,13 +92,13 @@
 			}
 
 			?>
-		
+
 		</div>
 
 		<div class="footer">
 			<p> People Health Pharmacy | Group 420</p>
 		</div>
-	
+
 	</div>
 
 </body>
