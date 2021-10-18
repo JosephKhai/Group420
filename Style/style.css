@@ -241,10 +241,6 @@ body {
     text-align: center;
 }
 
-#searchq {
-    size: 50px;
-}
-
 /* add sales */
 
 #customerorder {
@@ -263,7 +259,7 @@ body {
 }
 
 #addsalesquantity {
-    padding: 10px;
+    padding-top: 10px;
 }
 
 #Quantity {
@@ -276,9 +272,19 @@ body {
 }
 
 #processBtn {
-    margin-left: 47.5%;
+    margin-left: 65%;
 }
 
+/* edit page */
+
+#editUpdateBtn {
+    margin-left: 56.5%;
+    padding-top: 15px;
+}
+
+#updateDataHeading {
+    padding-bottom: 50px;
+}
 
 /* footer */
 

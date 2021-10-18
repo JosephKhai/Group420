@@ -16,9 +16,12 @@
 		<div id="content-wrap">
 
 			<ul class="topnav">
-				<li><a href="homepage.php">Home</a></li>
-				<li><a href="AddSales.php">Add Sales</a></li>
-				<li><a class="active" href="SalesReport.php">Sales Report</a></li>
+			<li><a href="homepage.php">Home</a></li>
+                <li><a href="addItems.php">Add Item</a></li>
+                <li><a href="warehouse.php">Warehouse Report</a></li>
+                <li><a href="AddSales.php">Add Sales</a></li>
+                <li><a href="SalesReport.php">Sales Report</a></li>
+                <li><a href="admin.php">Manage</a></li>
 			</ul>
 
 			<div>
